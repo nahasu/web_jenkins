@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: springboot-app
-          image: {ECR_Path값/repository 이름}:IMAGE_VERSION
+          image: 621917999036.dkr.ecr.ap-northeast-2.amazonaws.com/web_jenkins
           imagePullPolicy: Always
           ports:
             -containerPort: 8080
