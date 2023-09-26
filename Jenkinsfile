@@ -21,10 +21,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    docker.withRegistry("https://${ECR_PATH}", "ecr:${REGION}:${AWS_CREDENTIAL_ID}") {
-                        def image = docker.build("${ECR_PATH}/${ECR_IMAGE}:${env.BUILD_NUMBER}")
-                        // 태그를 특정 빌드 번호로 설정
-                    }
+                    image = docker.build("${ECR_PATH}/${ECR_IMAGE}:${env.BUILD_NUMBER}")
                 }
             }
         }
