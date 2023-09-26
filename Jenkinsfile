@@ -11,7 +11,7 @@ node {
 
     stage('Push image to ECR') {
         withAWS(credentials: 'Web_ECR', region: 'ap-northeast-2') {
-            docker.withRegistry('', 'ecr:ap-northeast-2:web_jenkins') {
+            docker.withRegistry('', 'ecr:ap-northeast-2:Web_ECR') {
                 customImage.push()
                 customImage.push("latest")
             }
