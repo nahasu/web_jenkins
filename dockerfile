@@ -4,11 +4,6 @@ LABEL maintainer BABO TT <babo@babo.com>
                 # LABEL : 해당 이미지에 대한 정보 maintainer(만든사람)
 #RUN sudo su -
 
-COPY ./environment /environment
-
-RUN chmod +x /environment
-RUN /environment
-
 RUN apt-get update -y
 
 RUN apt-get install apache2 -y && apt-get install -y wget && apt-get install -y curl
