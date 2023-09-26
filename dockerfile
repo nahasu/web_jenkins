@@ -8,7 +8,8 @@ RUN apt-get update -y
 
 RUN apt-get install apache2 -y && apt-get install -y wget && apt-get install -y curl
 
-RUN wget https://raw.githubusercontent.com/nahasu/aws_jenkins/main/index.html -O /var/www/html/
+RUN wget https://raw.githubusercontent.com/nahasu/aws_jenkins/main/index.html -O /var/www/html/index.html
+
 
 RUN a2enmod proxy
 RUN a2enmod proxy_http
