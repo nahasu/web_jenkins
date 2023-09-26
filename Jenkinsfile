@@ -36,14 +36,6 @@ pipeline {
             }
         }
 
-        stage('CleanUp Images') {
-            steps {
-                sh"""
-                docker rmi ${ECR_PATH}/${ECR_IMAGE}:${env.BUILD_NUMBER}
-                docker rmi ${ECR_PATH}/${ECR_IMAGE}
-                """
-            }
-        }
 
         stage('Deploy to k8s') {
             steps {
