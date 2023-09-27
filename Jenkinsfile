@@ -5,7 +5,7 @@ pipeline {
         REGION = 'ap-northeast-2'
         EKS_API = 'https://97E7191BC5E0FBA3B8009BAD384EE126.yl4.ap-northeast-2.eks.amazonaws.com'
         EKS_CLUSTER_NAME = 'myeks'
-        EKS_JENKINS_CREDENTIAL_ID = 'Web_ECR'
+        EKS_JENKINS_CREDENTIAL_ID = 'kubectl-deploy-credentials'
         ECR_PATH = '621917999036.dkr.ecr.ap-northeast-2.amazonaws.com'
         ECR_IMAGE = 'web_jenkins'
         AWS_CREDENTIAL_ID = 'Web_ECR'
