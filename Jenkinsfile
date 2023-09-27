@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REGION = 'ap-northeast-2'
-        EKS_API = 'https://97E7191BC5E0FBA3B8009BAD384EE126.yl4.ap-northeast-2.eks.amazonaws.com'
+        EKS_API = 'https://AD8C9492E4BB76B78456947E4E4867D8.yl4.ap-northeast-2.eks.amazonaws.com'
         EKS_CLUSTER_NAME = 'myeks'
         EKS_JENKINS_CREDENTIAL_ID = 'nseal@myeks.ap-northeast-2.eksctl.io'
         ECR_PATH = '621917999036.dkr.ecr.ap-northeast-2.amazonaws.com'
