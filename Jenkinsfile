@@ -21,7 +21,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    image = docker.build("${ECR_PATH}/${ECR_IMAGE}:${env.BUILD_NUMBER}")
+                    image = docker.build("${ECR_PATH}/${ECR_IMAGE}:latest")
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://${ECR_PATH}", "ecr:${REGION}:${AWS_CREDENTIAL_ID}") {
-                        image.push("${env}")
+                        image.push()
                     }
                 }
             }
