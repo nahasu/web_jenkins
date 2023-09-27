@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://${ECR_PATH}", "ecr:${REGION}:${AWS_CREDENTIAL_ID}") {
-                        image.push("${env}.latest")
+                        image.push("${env}")
                     }
                 }
             }
