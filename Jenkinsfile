@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Push to ECR') {
             steps {
                 script {
@@ -35,6 +35,14 @@ pipeline {
                 }
             }
         }
+
+        stage('CleanUp Images'){
+            sh"""
+            docker rmi ${ECR_PATH}/${ECR_IMAGE}:$BUILD_NUMBER
+            docker rmi ${ECR_PATH}/${ECR_IMAGE}:latest
+            """
+        }
+
 
 
         stage('Deploy to k8s') {
