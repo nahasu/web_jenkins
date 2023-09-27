@@ -45,6 +45,7 @@ pipeline {
                         sh "docker pull 621917999036.dkr.ecr.ap-northeast-2.amazonaws.com/web_jenkins:latest"
                         sh "kubectl apply -f output.yaml"
                         sh "rm output.yaml"
+                        sh "docker image rm 621917999036.dkr.ecr.ap-northeast-2.amazonaws.com/web_jenkins"
                     }
                 }
             }
